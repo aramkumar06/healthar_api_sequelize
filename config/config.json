@@ -1,0 +1,12 @@
+{
+    "db_config": {
+        "dev_local": "postgres://lilycraver:pass1234@localhost:5432/healthar",
+        "prod": "postgres://laazeloutlpkuy:8587cb0d7da9fc2b00f96911b0dd3ce76f6e4d8126565e1a038651d27e8d42a8@ec2-50-17-246-114.compute-1.amazonaws.com:5432/depmfh3rplkgtj"
+    },
+    "local_graphql": {
+        "dev_local": "http://localhost:4000/graphql/"
+    },
+    "primary_path": {
+        "dev_local": "localhost:3000/"
+    }
+}

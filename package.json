@@ -1,0 +1,57 @@
+{
+  "name": "sambot_api",
+  "version": "1.0.0",
+  "description": "The API for sambot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SocialWithin/SamBot_API.git"
+  },
+  "author": "Liam Craver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SocialWithin/SamBot_API/issues"
+  },
+  "homepage": "https://github.com/SocialWithin/SamBot_API#readme",
+  "dependencies": {
+    "@google/maps": "^0.5.5",
+    "@sendgrid/mail": "^6.3.1",
+    "auth0-js": "^9.8.2",
+    "body-parser": "^1.18.3",
+    "continuation-local-storage": "^3.2.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "express-jwt": "^5.3.1",
+    "graphql": "^14.0.2",
+    "graphql-import": "^0.7.1",
+    "graphql-request": "^1.8.2",
+    "graphql-s2s": "^0.18.1",
+    "graphql-serverless": "^0.8.1",
+    "graphql-tools": "^4.0.3",
+    "graphql-type-json": "^0.2.1",
+    "graphql-yoga": "^1.17.4",
+    "mathjs": "^5.4.0",
+    "moment": "^2.23.0",
+    "morgan": "^1.9.1",
+    "nodemailer": "^4.7.0",
+    "oauth2orize": "^1.11.0",
+    "p-iteration": "^1.1.7",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-jwt": "^4.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.6.1",
+    "pg-boss": "^3.1.2",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "schemaglue": "^4.0.2",
+    "sequelize": "^4.42.0"
+  }
+}

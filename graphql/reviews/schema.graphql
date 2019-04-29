@@ -1,0 +1,20 @@
+type Review {
+  id: Int
+  creatorID: String,
+  locationID: String,
+  inclusiveSexuality: Boolean,
+  inclusiveTransgender: Boolean,
+  unisexBathroom: Boolean,
+  bathroomLocationDescription: String,
+  description: String
+}
+
+type Query {
+  GetAllReviewsForID(id: String!): [Review]
+  GetAllReviewsForUser(id: String!): [Review]
+}
+
+type Mutation {
+  CreateReview(creatorID: String!, locationID: String!, inclusiveSexuality: Boolean, inclusiveTransgender: Boolean, unisexBathroom: Boolean, bathroomLocationDescription: String, description: String): JSON
+  EditReview(inclusiveSexuality: Boolean, inclusiveTransgender: Boolean, unisexBathroom: Boolean, bathroomLocationDescription: String, description: String): Boolean
+}

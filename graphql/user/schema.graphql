@@ -1,0 +1,19 @@
+type User {
+  id: Int
+  name: String
+  email: String
+  password: String
+  profile: JSON
+  reviews: JSON
+}
+
+type Query {
+  GetAllUsers: [User]
+  GetUser(id: Int!): User
+  Login(email: String!, password: String!): JSON
+}
+
+type Mutation {
+  CreateUser(name: String!, email: String!, password: String!): JSON
+  EditUser(id: Int!, name: String, email: String, password: String): Boolean
+}
