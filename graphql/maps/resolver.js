@@ -22,9 +22,28 @@ exports.resolver = {
                 return results;
             })
         },
-        GetLocationsNearby(root, {radius, lat, lng, name}) {
+        GetLocationsNearby(root, {radius, lat, lng, name, category}) {
+
+            let tmpName = name;
+
+            if(category)
+            {
+                if(category == "all" && name == null)
+                    tmpName = null
+                else if(category == "all" && name != null)
+                    tmpName = name
+                else if(category == "restroom")
+                    tmpName = null
+                else if(name == null) 
+                    tmpName = category
+                else 
+                    tmpName = name + " " + category
+            }
+
+            console.log(tmpName)
+
             return mapsClient.placesNearby({
-                name,
+                name: tmpName,
                 location: {lat, lng},
                 radius: milesToMeters(radius)
             }).asPromise()
@@ -37,8 +56,24 @@ exports.resolver = {
                         },
                     }).then((reviews) => {
                         results[placeIndex].reviews = reviews;
+
+                        let count = 0;
+                        let total = 0;
+                        reviews.map((review, id) => {
+                            if(review.unisexBathroom != null)
+                            {
+                                if(review.unisexBathroom)
+                                    count = count + 1;
+                                total = total + 1;
+                            }
+                        })
+
+                        results[placeIndex].hasBR = (count / total > 0.5);
                     })
                 });
+
+                if(category == "restroom")
+                    results = results.filter(x => x.hasBR)
 
                 return results;
             })
