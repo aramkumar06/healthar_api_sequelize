@@ -36,7 +36,14 @@ exports.resolver = {
 					password
 				}
 			}).then((user) => {
-				return user.id;
+				if(user == null)
+					return {
+						error: "No user found!"
+					}
+				else
+					return {
+						id: user.id
+					}
 			}).catch((err) => {
 				if (err) throw new Error(err)
 				return err;

@@ -1,4 +1,5 @@
 type Query {
-  GetLocationsNearby(radius: Int!, lat: Float!, lng: Float!): JSON
+  GetReviewsNearby(radius: Int!, lat: Float!, lng: Float!): JSON
+  GetLocationsNearby(radius: Int!, lat: Float!, lng: Float!, name: String): JSON
   GetLocationDetails(id: String!): JSON
 }

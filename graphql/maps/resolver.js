@@ -14,8 +14,17 @@ let milesToMeters = (miles) => {
 
 exports.resolver = {
     Query: {
-        GetLocationsNearby(root, {radius, lat, lng}) {
+        GetReviewsNearby(root, {radius, lat, lng}) {
+
+            let query = `SELECT * FROM public.reviews WHERE "lng" >= ${lng-1} AND "lng" <= ${lng+1} AND "lat" >= ${lat-1} AND "lat" <= ${lat+1}`;
+
+            return db.Sequelize.query(query).then(async ([results, metadata]) => {
+                return results;
+            })
+        },
+        GetLocationsNearby(root, {radius, lat, lng, name}) {
             return mapsClient.placesNearby({
+                name,
                 location: {lat, lng},
                 radius: milesToMeters(radius)
             }).asPromise()

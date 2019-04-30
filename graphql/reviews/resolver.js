@@ -29,8 +29,10 @@ exports.resolver = {
 		}
 	},
 	Mutation: {
-		CreateReview(root, { creatorID, locationID, inclusiveSexuality, inclusiveTransgender, unisexBathroom, bathroomLocationDescription, description }) {
+		CreateReview(root, { lat, lng, creatorID, locationID, inclusiveSexuality, inclusiveTransgender, unisexBathroom, bathroomLocationDescription, description }) {
 			return db.Review.create({
+				lat,
+				lng,
                 creatorID,
                 locationID,
                 inclusiveSexuality,

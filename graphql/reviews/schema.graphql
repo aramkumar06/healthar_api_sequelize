@@ -15,6 +15,6 @@ type Query {
 }
 
 type Mutation {
-  CreateReview(creatorID: String!, locationID: String!, inclusiveSexuality: Boolean, inclusiveTransgender: Boolean, unisexBathroom: Boolean, bathroomLocationDescription: String, description: String): JSON
+  CreateReview(lat: Float!, lng: Float!, creatorID: String!, locationID: String!, inclusiveSexuality: Boolean, inclusiveTransgender: Boolean, unisexBathroom: Boolean, bathroomLocationDescription: String, description: String): JSON
   EditReview(inclusiveSexuality: Boolean, inclusiveTransgender: Boolean, unisexBathroom: Boolean, bathroomLocationDescription: String, description: String): Boolean
 }

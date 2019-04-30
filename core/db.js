@@ -30,6 +30,8 @@ var User = sequelize.define('users', {
 // User.sync({force: true}).then(function () { });
 
 var Review = sequelize.define('review', {
+  lat: Sequelize.FLOAT,
+  lng: Sequelize.FLOAT,
   creatorID: Sequelize.INTEGER,
   locationID: Sequelize.STRING,
   inclusiveSexuality: Sequelize.BOOLEAN,
